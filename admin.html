@@ -1,0 +1,210 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Admin Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Admin Dashboard</h1>
+        <section>
+            <h2>Add New Course</h2>
+            <form id="add-course-form">
+                <label for="course-name">Course Name</label>
+                <input type="text" id="course-name" required>
+                <label for="course-description">Course Description</label>
+                <textarea id="course-description" required></textarea>
+                <button type="submit">Add Course</button>
+            </form>
+
+            <h2>Manage Courses</h2>
+            <div id="admin-courses">
+                 Admin course management 
+            </div>
+        </section>
+    </main> 
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Admin Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head><style>
+    /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.sidebar .logo {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: block;
+  padding: 10px;
+}
+
+.sidebar ul li a:hover {
+  background-color: #34495e;
+  border-radius: 5px;
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  width: 100%;
+}
+
+header h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Content Section Styles */
+.content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-section {
+  display: none;
+}
+
+.content-section h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #2ecc71;
+}
+
+</style>
+<body>
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <div class="logo">
+      <h2>Uni Admin</h2>
+    </div>
+    <ul>
+      <li><a href="#" onclick="showContent('dashboard')">Dashboard</a></li>
+      <li><a href="#" onclick="showContent('students')">Students</a></li>
+      <li><a href="#" onclick="showContent('courses')">Courses</a></li>
+      <li><a href="#" onclick="showContent('staff')">Staff</a></li>
+      <li><a href="#" onclick="showContent('settings')">Settings</a></li>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header>
+      <h1>Welcome to University Admin Dashboard</h1>
+    </header>
+    
+    <!-- Content Area -->
+    <div id="content" class="content">
+      <!-- Default Dashboard Content -->
+      <div id="dashboard" class="content-section">
+        <h2>Dashboard</h2>
+        <p>This is the dashboard where the admin can get an overview of the university.</p>
+      </div>
+      
+      <!-- Students Section -->
+      <div id="students" class="content-section" style="display:none;">
+        <h2>Students Management</h2>
+        <p>Manage student records here.</p>
+        <button onclick="addStudent()">Add Student</button>
+      </div>
+
+      <!-- Courses Section -->
+      <div id="courses" class="content-section" style="display:none;">
+        <h2>Courses Management</h2>
+        <p>Manage course offerings here.</p>
+        <button onclick="addCourse()">Add Course</button>
+      </div>
+
+      <!-- Staff Section -->
+      <div id="staff" class="content-section" style="display:none;">
+        <h2>Staff Management</h2>
+        <p>Manage university staff members here.</p>
+        <button onclick="addStaff()">Add Staff</button>
+      </div>
+
+      <!-- Settings Section -->
+      <div id="settings" class="content-section" style="display:none;">
+        <h2>Settings</h2>
+        <p>Manage university settings and configurations.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
